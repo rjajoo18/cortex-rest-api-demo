@@ -2,7 +2,7 @@ import json
 import requests
 import streamlit as st
 import snowflake.connector
-import sseclient 
+import sseclient
 
 
 # replace these values in your .secrets.toml file, not here!
@@ -15,7 +15,7 @@ ROLE = st.secrets["snowflake"]["role"]
 # API configuration 
 API_ENDPOINT = "/api/v2/cortex/inference:complete"
 API_TIMEOUT = 50000  # in milliseconds
-MODEL_NAME = "mistral-large2" # change me to mistral-large2, llama3.1-70b or claude-3-5-sonnet and see what happens!
+MODEL_NAME = "claude-3-5-sonnet" # change me to mistral-large2, llama3.1-70b or claude-3-5-sonnet and see what happens!
 
 # Chat assistant defaults 
 icons = {"assistant": "❄️", "user": "⛷️"}
@@ -50,15 +50,17 @@ def api_call(prompt: str):
             url=f"https://{HOST}"+API_ENDPOINT,
             json=payload,
             headers={
-                "Authorization": f'Snowflake Token="{st.session_state.CONN.rest.token}"',
-                "Content-Type": "application/json",
+                "Authorization": f'Snowflake Token="{st.session_state.CONN.rest.token}"'
             }
-        )
+        ,stream=True)
 
-    if resp.status_code < 400: 
+    #try:
+    if resp.status_code < 400:
         client = sseclient.SSEClient(resp)
 
+
         for event in client.events():
+
             try: 
                 parsed = json.loads(event.data)
 
@@ -78,8 +80,8 @@ def api_call(prompt: str):
             except:
                 continue
 
-    else: 
-        yield "Sorry, I've run into an error with this request! :( \n\n It's likely that my API request is malformed. You can try debugging in the `api_call()` function."
+    #except: 
+    #    yield "Sorry, I've run into an error with this request! :( \n\n It's likely that my API request is malformed. You can try debugging in the `api_call()` function."
 
 def connect_to_snowflake():
     # connection
