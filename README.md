@@ -16,14 +16,21 @@ This repository shows you how to build a simple chat app using Snowflake's API.
 ```
 curl "https://[ACCOUNT-IDENTIFIER].snowflakecomputing.com/api/v2/cortex/inference:complete" \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer PERSONAL_ACCESS_TOKEN" \
+    -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN" \
     -d '{
-        "model": "gpt-5",
-        "input": "Write a one-sentence bedtime story about a unicorn."
+        "model": "claude-3-5-sonnet",
+        "messages": [
+            {
+            "role": "user",
+            "content": "Write me a one line poem about Snowflake"
+            }
+        ]
     }'
 ```
 
-To reproduce: 
+Snowflake's API is compatible with [OpenAI's spec](https://platform.openai.com/docs/quickstart?context=curl) 
+
+#### To reproduce: 
 
 1. Sign up for a new Snowflake account [here](https://mlh.link/snowflake-signup). Activate your account by e-mail (see screenshot below), pick a username and password, and you should see a welcome screen.
 
@@ -41,7 +48,7 @@ To reproduce:
 
     <img width="450"  src="https://github.com/user-attachments/assets/c4839cb9-585f-4af7-a7fb-40c328153786" />
 
-  
+4. That's it! Run the curl command in your terminal and observe the streaming output   
 
 ## Building your first app 
 
