@@ -42,7 +42,7 @@ Snowflake's API is compatible with [OpenAI's spec](https://platform.openai.com/d
 
     <img width="605" height="375" alt="Screenshot 2025-09-12 at 11 25 08 AM" src="https://github.com/user-attachments/assets/6ada1e18-4985-4bdd-a5a1-cbae7f78d8f9" />
 
-3. Find your account identifier by click on your name in the bottom left corner of Snowflake's UI, and selecting `Connect a tool to Snowflake`:
+3. Find your account identifier by clicking on your name in the bottom left corner of Snowflake's UI, and selecting `Connect a tool to Snowflake`:
 
     <img width="220" alt="Screenshot 2025-04-15 at 9 08 27 PM" src="https://github.com/user-attachments/assets/d485f628-e397-4869-82d7-c5e1c1af24c0" />
 
