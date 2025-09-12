@@ -104,7 +104,7 @@ def main():
 
     st.sidebar.title("My First Chat App")
 
-    st.caption("Visit [CORTEX PLAYGROUND](https://app.snowflake.com/_deeplink/#/cortex/playground) for an interactive interface to test out models, and view model availability")
+    st.sidebar.caption("Visit [CORTEX PLAYGROUND](https://app.snowflake.com/_deeplink/#/cortex/playground) for an interactive interface to test out models, and view model availability")
 
     st.sidebar.button('Clear chat history', on_click=clear_chat_history)
 
