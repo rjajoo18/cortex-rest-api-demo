@@ -33,7 +33,7 @@ This repository shows you how to build a simple chat app using Snowflake's API.
 [snowflake]
 account = "[Account Identifier]"
 user = "[User Name]"
-password = "[Paste in your Personal Access Token here]"
+api_key = "[Paste in your Personal Access Token here]"
 role = "[Role]"
 host = "[Account/Server URL]"
 ```
