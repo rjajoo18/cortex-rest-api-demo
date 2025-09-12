@@ -9,7 +9,7 @@ import sseclient
 HOST = st.secrets["snowflake"]["host"]
 ACCOUNT = st.secrets["snowflake"]["account"]
 USER =st.secrets["snowflake"]["user"]
-PASSWORD = st.secrets["snowflake"]["password"]
+API_KEY = st.secrets["snowflake"]["api_key"]
 ROLE = st.secrets["snowflake"]["role"]
 
 # API configuration 
@@ -90,7 +90,7 @@ def connect_to_snowflake():
         try: 
             st.session_state.CONN = snowflake.connector.connect(
                 user=USER,
-                password=PASSWORD,
+                password=API_KEY,
                 account=ACCOUNT,
                 host=HOST,
                 port=443,
