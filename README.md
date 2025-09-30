@@ -2,8 +2,8 @@
 
 
 #### Jump ahead: 
-* [Quickly connect to Snowflake's LLM REST API](https://github.com/annafil/cortex-rest-api-demo/main/README.md#tldr-quickly-connect-to-snowflakes-llm-rest-api)
-* [Building your first app](https://github.com/annafil/cortex-rest-api-demo/main/README.md#building-your-first-app)
+* [Quickly connect to Snowflake's LLM REST API](https://github.com/annafil/cortex-rest-api-demo/#quickly-connect-to-snowflakes-llm-rest-api)
+* [Building your first app](https://github.com/annafil/cortex-rest-api-demo/?tab=readme-ov-file#building-your-first-app)
   
 ## Overview
 
