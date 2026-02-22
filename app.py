@@ -100,13 +100,16 @@ def connect_to_snowflake():
         except:
             st.error('Connection not established. Check that you have correctly entered your Snowflake credentials!', icon="🚨")    
 
+
 def main():
 
     st.sidebar.title("My First Chat App")
-
     st.sidebar.caption("Visit [CORTEX PLAYGROUND](https://app.snowflake.com/_deeplink/#/cortex/playground) for an interactive interface to test out models, and view model availability")
-
     st.sidebar.button('Clear chat history', on_click=clear_chat_history)
+
+    # ✅ Add this block before connect_to_snowflake()
+    if "CONN" not in st.session_state:
+        st.session_state.CONN = None
 
     connect_to_snowflake()
 
@@ -138,3 +141,6 @@ def main():
    
 if __name__ == "__main__":
     main()
+
+
+
